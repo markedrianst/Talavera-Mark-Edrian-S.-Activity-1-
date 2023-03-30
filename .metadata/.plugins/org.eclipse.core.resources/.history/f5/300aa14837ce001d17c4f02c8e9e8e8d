@@ -1,0 +1,132 @@
+package LOGIN_UI;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import java.awt.*;
+
+import javax.swing.*;
+public final class Login_Frame extends JFrame implements ActionListener {
+	ImageIcon icon = new ImageIcon("images_-.png");
+	Toolkit toolkit = getToolkit();
+	Dimension size = toolkit.getScreenSize();
+	JLabel username=new JLabel("Username ");
+	JLabel password=new JLabel("Password ");
+	
+	JTextField usertxt =new JTextField();
+	JPasswordField PassField =new JPasswordField();
+	
+	JButton newAccount =new JButton("<html><u>Don't have an accout? Sign Up</u></html>");
+	JButton Login =new JButton("Sign in");
+	JButton Cancel =new JButton("Cancel");
+	
+	ImageIcon img = new ImageIcon(new ImageIcon("bg.jpg").getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH));
+	JLabel bg = new JLabel("", img, JLabel.CENTER);
+	
+	ImageIcon img1 = new ImageIcon(new ImageIcon("username-.png").getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH));
+	JLabel usericon = new JLabel("", img1, JLabel.RIGHT);
+	
+	ImageIcon img2 = new ImageIcon(new ImageIcon("download-.png").getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH));
+	JLabel passicon = new JLabel("", img2, JLabel.RIGHT);
+	
+	ImageIcon img3 = new ImageIcon(new ImageIcon("username-.png").getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH));
+	JLabel icon1 = new JLabel("", img3, JLabel.RIGHT);
+	
+	JLabel signin =new JLabel ("Sign In To Your Account");
+	
+	JCheckBox showpass =new JCheckBox();
+	JLabel sp=new JLabel("Show Password");
+	
+	
+	void Login_Frame(){
+		setSize(410,440);
+		setLocation(size.width/2 - getWidth()/2, size.height/2 - getHeight()/2);
+		setTitle("LOGIN/REGISTER");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setIconImage(icon.getImage());
+		getContentPane().setBackground(Color.decode("#205072"));
+		setResizable(false);
+		bg.setBounds(0, 0, 400, 400);
+		
+		signin.setBounds(90, 40, 250,40);
+		signin.setFont(new Font("Berlin Sans FB Demi", Font.PLAIN, 21));
+		signin.setForeground(Color.WHITE);
+		icon1.setBounds(160, 80, 70, 70);
+
+		username.setBounds(165, 140, 150, 30);
+		username.setForeground(Color.white);
+		usertxt.setBounds(75, 160, 260, 30);
+		usertxt.setForeground(Color.WHITE);
+		usertxt.setHorizontalAlignment(JTextField.CENTER);
+		usertxt.setBorder(BorderFactory.createMatteBorder(0,0,3,0,Color.black ));
+		usertxt.setOpaque(false);
+		
+		password.setBounds(165, 190, 150, 30);
+		password.setForeground(Color.white);
+		PassField.setBounds(75, 210, 260, 30);
+		PassField.setEchoChar('*');
+		PassField.setHorizontalAlignment(JTextField.CENTER);
+		PassField.setForeground(Color.WHITE);
+		PassField.setBorder(BorderFactory.createMatteBorder(0,0,3,0,Color.black ));
+		PassField.setOpaque(false);
+		
+		
+		
+		
+		newAccount.setBounds(100, 310, 200, 25);
+		newAccount.setBorder(BorderFactory.createMatteBorder(0,0,0,0,Color.white));
+		newAccount.setOpaque(false);
+		newAccount.setBackground(Color.decode("#329D9C"));
+		newAccount.setForeground(Color.white);
+		newAccount.setFocusable(false);
+		newAccount.addActionListener(this);
+		
+	
+		
+		Login.setBounds(110, 280, 80, 25);
+		Login.setForeground(Color.white);
+		Login.setBorder(BorderFactory.createLineBorder(Color.white, 2));
+		Login.setFocusable(false);
+		Login.setBackground(Color.decode("#0000FF"));
+		Login.addActionListener(this);
+		
+		Cancel.setBounds(190, 280, 80, 25);
+		Cancel.setBorder(BorderFactory.createLineBorder(Color.white, 2));
+		Cancel.setForeground(Color.white);
+		Cancel.setBackground(Color.decode("#AA4A44"));
+		Cancel.setFocusable(false);
+		Cancel.addActionListener(this);
+		
+		
+		
+		
+		
+		
+		add(sp);
+		add(signin);
+		add(passicon);
+		add(usericon);
+		add(icon1);
+		add(username);
+		add(usertxt);
+		add(password);
+		add(PassField);
+		add(newAccount);
+		add(Login);
+		add(Cancel);
+		add(bg);
+		setLayout(null);
+		setVisible(true);
+	}
+	
+	
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

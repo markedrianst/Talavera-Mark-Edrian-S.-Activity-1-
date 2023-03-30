@@ -1,0 +1,12 @@
+package LOGIN_UI;
+import java.awt.*;
+
+import javax.swing.*;
+public class DashBoard_Frame extends JFrame {
+	
+	void  DashBoard_Frame() {
+		
+		
+	}
+
+}

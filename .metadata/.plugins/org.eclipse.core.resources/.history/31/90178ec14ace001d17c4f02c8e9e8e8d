@@ -1,0 +1,175 @@
+package LOGIN_UI;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+public class New_Account_Frame extends JFrame implements ActionListener  {
+	
+	Toolkit toolkit = getToolkit();
+	Dimension size = toolkit.getScreenSize();
+	JLabel create=new JLabel("<html> <u>Create</u></html> ");
+	JLabel New=new JLabel("<html> <u>New</u></html>");
+	JLabel account=new JLabel("<html> <u>Account</u></html>");
+	
+	JLabel FirstName=new JLabel("First Name :");
+	JTextField Fname=new JTextField();
+	JLabel LastName=new JLabel("Last Name :");
+	JTextField LName=new JTextField();
+	
+	
+	JLabel Username=new JLabel("Username ");
+	JTextField Usernametxt=new JTextField();
+	JLabel Passwrd=new JLabel("Password  ");
+	JPasswordField Passwrdtxt=new JPasswordField();
+	JLabel ConfirmPass=new JLabel("Confirm Password  ");
+	JPasswordField ConfirmPasstxt=new JPasswordField();
+	
+	
+	ImageIcon img = new ImageIcon(new ImageIcon("bg.jpeg").getImage().getScaledInstance(800,600, Image.SCALE_SMOOTH));
+	JLabel bg = new JLabel("", img, JLabel.CENTER);
+	ImageIcon img1 = new ImageIcon(new ImageIcon("createnew.jpg").getImage().getScaledInstance(90, 90, Image.SCALE_SMOOTH));
+	JLabel createnew = new JLabel("", img1, JLabel.CENTER);
+	
+	JButton confirm=new JButton("Confirm");
+	JButton Cancel=new JButton("Cancel");
+	
+	JCheckBox showpass =new JCheckBox();
+	JLabel sp=new JLabel("Show Password");
+	
+	JPanel pn =new JPanel();
+	void New_Account_Frame() {
+		
+			setIconImage(img1.getImage());
+			setSize(700,600);
+			setLocation(size.width/2 - getWidth()/2, size.height/2 - getHeight()/2);
+			setTitle("Create new Account");
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			//getContentPane().setBackground(Color.decode("#008b8b"));
+			setResizable(false);
+			bg.setBounds(0, 0, 800,600);
+			createnew.setBounds(70, 10, 90, 90);
+			
+			pn.setBounds(90, 100, 500, 400);
+			pn.setBackground(new Color(50,100,150,60));
+			pn.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
+			pn.setLayout(new BorderLayout());
+			
+			create.setBounds(150, 40, 150, 40);
+			create.setFont(new Font("Berlin Sans FB Demi", Font.PLAIN, 40));
+			create.setForeground(Color.WHITE);
+			
+			New.setBounds( 280, 40, 150, 40);
+			New.setFont(new Font("Berlin Sans FB Demi", Font.PLAIN, 40));
+			New.setForeground(Color.WHITE);
+			
+			account.setBounds( 370, 40, 150, 40);
+			account.setFont(new Font("Berlin Sans FB Demi", Font.PLAIN, 40));
+			account.setForeground(Color.WHITE);
+	
+		
+			FirstName.setBounds( 340, 210, 150, 30);
+			FirstName.setForeground(Color.white);
+			Fname.setBounds(340, 230, 150, 30);
+			Fname.setHorizontalAlignment(JTextField.CENTER);
+			Fname.setForeground(Color.white);
+			Fname.setBorder(BorderFactory.createMatteBorder(0,0,3,0,Color.white ));
+			Fname.setOpaque(false);
+		
+			LastName.setBounds( 180, 210, 150, 30);
+			LastName.setForeground(Color.white);
+			LName.setBounds(180, 230, 150, 30);
+			LName.setHorizontalAlignment(JTextField.CENTER);
+			LName.setForeground(Color.white);
+			LName.setBorder(BorderFactory.createMatteBorder(0,0,3,0,Color.white ));
+			LName.setOpaque(false);
+		
+		
+			
+			Username.setBounds( 180, 260, 150, 30);
+			Username.setForeground(Color.white);
+			Usernametxt.setBounds( 180, 280, 310, 30);
+			Usernametxt.setHorizontalAlignment(JTextField.CENTER);
+			Usernametxt.setForeground(Color.white);
+			Usernametxt.setBorder(BorderFactory.createMatteBorder(0,0,3,0,Color.white ));
+			Usernametxt.setOpaque(false);
+			
+			
+			Passwrd.setBounds( 180, 310, 150, 30);
+			Passwrd.setForeground(Color.white);
+			Passwrdtxt.setBounds( 180, 330, 310, 30);
+			Passwrdtxt.setHorizontalAlignment(JTextField.CENTER);
+			Passwrdtxt.setForeground(Color.white);
+			Passwrdtxt.setBorder(BorderFactory.createMatteBorder(0,0,3,0,Color.white ));
+			Passwrdtxt.setOpaque(false);
+			
+			ConfirmPass.setBounds( 180, 360, 150, 30);
+			ConfirmPass.setForeground(Color.white);
+			ConfirmPasstxt.setBounds( 180, 380, 310, 30);
+			ConfirmPasstxt.setHorizontalAlignment(JTextField.CENTER);
+			ConfirmPasstxt.setForeground(Color.white);
+			ConfirmPasstxt.setBorder(BorderFactory.createMatteBorder(0,0,3,0,Color.white ));
+			ConfirmPasstxt.setOpaque(false);
+			
+			
+			
+		
+			showpass.setBounds(180, 410, 20, 20);
+			showpass.setOpaque(false);
+			showpass.addActionListener(this);
+			add(showpass);
+			
+			sp.setBounds(200, 410, 100, 20);
+			sp.setForeground(Color.white);
+			
+			confirm.setBounds(180, 440, 150, 30);
+			confirm.setBorder(BorderFactory.createLineBorder(Color.white, 2));
+			confirm.setForeground(Color.white);
+			confirm.setBackground(Color.decode("#0000FF"));
+			confirm.setFocusable(false);
+			confirm.addActionListener(this);
+			
+			Cancel.setBounds(340, 440, 150, 30);
+			Cancel.setBorder(BorderFactory.createLineBorder(Color.white, 2));
+			Cancel.setForeground(Color.white);
+			Cancel.setBackground(Color.decode("#AA4A44"));
+			Cancel.setFocusable(false);
+			Cancel.addActionListener(this);
+			
+			
+		
+			add(confirm);
+			add(Cancel);
+			add(sp);
+			
+			add(createnew);
+			add(create);
+			add(New);
+			add(account);
+			
+			add(Username);
+			add(Usernametxt);
+			add(Passwrd);
+			add(Passwrdtxt);
+			add(ConfirmPass);
+			add(ConfirmPasstxt);
+			
+			add(FirstName);
+			add(Fname);
+			add(LastName);
+			add(LName);
+			
+			add(pn);
+			add(bg);
+			setLayout(null);
+			setVisible(true);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

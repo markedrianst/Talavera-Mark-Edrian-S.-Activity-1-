@@ -1,0 +1,15 @@
+package LOGIN_UI;
+
+public class Main_Frame {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		Login_Frame loginFrame=new Login_Frame();
+//		loginFrame.Login_Frame();
+		
+		New_Account_Frame New= new New_Account_Frame();
+		New.New_Account_Frame();
+
+	}
+
+}
